@@ -1,0 +1,229 @@
+<html>
+<head>
+  <title>Login Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+    integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+  <style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Karla", sans-serif;
+    }
+
+    body {
+      background-image: url("https://pbs.twimg.com/media/EzMQkJAVIAgaBo6?format=jpg&name=large");
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+
+    .container {
+      height: 100%;
+      align-content: center;
+    }
+
+    .box {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 110px;
+      width: 450px;
+      height: 450px;
+      border-radius: 20px;
+      background-color: rgba(0, 0, 0, 0.7) !important;
+    }
+
+    .login-header {
+      background-color: #6292e9;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .title h1 {
+      padding: 10px;
+      text-align: left;
+      margin-left: 30px;
+      color: #fbfbfb;
+      letter-spacing: 3px;
+      font-weight: 900;
+    }
+
+    .social_icon span {
+      font-size: 40px;
+      margin-left: 15px;
+      color: #fbfbfb;
+    }
+
+    .social_icon span:hover {
+      color: #000;
+      cursor: pointer;
+    }
+
+    .social_icon {
+      position: absolute;
+      top: 125px;
+      right: 497px;
+    }
+
+    .login-info {
+      margin-top: 40px;
+    }
+
+    .login-info label {
+      color: #fbfbfb;
+      opacity: 0.7;
+      margin-left: 45px;
+      font-size: 15px;
+    }
+
+    .login-info input {
+      background: transparent;
+      height: 34px;
+      width: 350px;
+      position: relative;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border: none;
+      border-bottom: 2px solid #6292e9;
+      outline-style: none;
+      color: #fbfbfb;
+      font-size: 18px;
+    }
+
+    textarea:focus,
+    input:focus {
+      background: rgba(0, 0, 0, 0.4) !important;
+      color: #fbfbfb;
+    }
+
+    .icon {
+      padding: 5px;
+      background: none;
+      color: #fbfbfb;
+      text-align: center;
+    }
+
+    .form-check {
+      margin-left: 28px;
+    }
+
+    .form-check p {
+      color: #fbfbfb;
+      font-size: 16px;
+      margin-left: 5px;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.4);
+    }
+
+    .form-group button {
+      margin-left: 320px;
+      background: #6292e9;
+      border: none;
+      font-weight: 700;
+    }
+
+    .form-group button:hover {
+      background: #000000;
+    }
+
+    .others p {
+      margin-left: 50px;
+      color: #fbfbfb;
+      font-size: 15px;
+      line-height: 2;
+    }
+
+    .others a {
+      color: #6292e9;
+    }
+
+    .others a:hover {
+      color: #fbfbfb;
+    }
+  </style>
+</head>
+
+<body>
+  <script type="text/javascript">
+    function validate() {
+      var username = document.getElementById("uname");
+      var password = document.getElementById("pass");
+      var form = document.getElementById("form");
+
+      form.addEventListener('submit', (e) => {
+        e.PreventDefault();
+      })
+
+      if (username.value == "" || password.value == "") {
+        username.style.borderBottom = "1px solid red";
+        password.style.borderBottom = "1px solid red";
+        username.focus();
+        password.focus();
+        alert("No blank values allowed");
+      } else if (password.value.length <= 6) {
+        password.style.borderBottom = "1px solid red";
+        password.focus();
+        alert("Password must be more than 6 characters");
+      } else if (password.value.length >= 20) {
+        password.style.borderBottom = "1px solid red";
+        password.focus();
+        alert("Password must be less than 20 characters");
+      } else {
+        alert("Login successful");
+        true;
+      }
+    }
+  </script>
+  <div class="container">
+    <div class="box">
+      <div class="login-header">
+        <div class="title">
+          <h1>Sign In</h1>
+          <div class="d-flex justify-content-end social_icon">
+            <span><i class="fab fa-facebook-square"></i></span>
+            <span><i class="fab fa-twitter-square"></i></span>
+            <span><i class="fab fa-google-plus-square"></i></span>
+          </div>
+        </div>
+      </div>
+      <form class="login" action="Camitoc_M5activity.html" method="post" id="form">
+        <div class="login-info">
+          <label for="username"> <i class="fa fa-user-check icon"></i>Phone, email, or username</label>
+          <input type="text" id="uname" name="uname" required><br>
+          <label for="password"><i class="fa fa-key icon"></i>Password</label>
+          <input type="password" id="pass" name="pass"><br>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="checkbox">
+          <label class="check" for="checkbox">
+            <p>Remember Me</p>
+          </label>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-success btn-lg float-right" type="submit" onclick="validate()">
+            Login
+          </button>
+        </div>
+      </form>
+      <div class="others">
+        <p>Don't have an account? <a href='#'>Sign Up</a><br><a href="#">Forgot Password?</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
